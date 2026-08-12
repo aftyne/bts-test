@@ -135,7 +135,7 @@ export default function ProductList() {
                     />
                   </div>
                 </CardHeader>
-                <CardContent className="flex-1 space-y-2 p-4">
+                <CardContent className="flex-1 space-y-2 px-4 py-2">
                   <div className="flex items-start justify-between gap-2">
                     <CardTitle className="line-clamp-1 text-base">
                       {product.title}
