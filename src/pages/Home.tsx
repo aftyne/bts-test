@@ -3,7 +3,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import { useDebounce } from "@/hooks/useDebounce"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { fetchProducts } from "@/api/getProducts"
 import { useAuth } from "@/context/AuthContext"
@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { ProductDetailDialog } from "@/components/ProductDetailDialog"
 
 export default function ProductList() {
   const { user } = useAuth()
@@ -143,10 +144,16 @@ export default function ProductList() {
                       {product.category?.name || "Uncategorized"}
                     </Badge>
                   </div>
-                  <p className="text-lg font-bold text-primary">
+                  <p className="text-lg font-bold text-primary-foreground">
                     ${product.price.toLocaleString()}
                   </p>
                 </CardContent>
+                <CardFooter className="p-4">
+                  <ProductDetailDialog
+                    product={product}
+                    cleanImageUrl={cleanImageUrl}
+                  />
+                </CardFooter>
               </Card>
             ))}
       </div>
