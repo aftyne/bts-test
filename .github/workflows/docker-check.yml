@@ -1,0 +1,19 @@
+name: Test Docker Build
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+
+jobs:
+  test-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Test Docker Compose Build
+        run: docker compose up -d --build
+
+      - name: Check running containers
+        run: docker ps
