@@ -80,7 +80,7 @@ export function ProductDetailDialog({
             <Badge variant="secondary">
               {product.category?.name || "Uncategorized"}
             </Badge>
-            <p className="text-2xl font-bold text-primary-foreground">
+            <p className="text-2xl font-bold text-foreground dark:text-primary-foreground">
               ${product.price.toLocaleString()}
             </p>
           </div>

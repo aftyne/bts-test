@@ -143,7 +143,7 @@ export default function ProductList() {
                       {product.category?.name || "Uncategorized"}
                     </Badge>
                   </div>
-                  <p className="text-lg font-bold text-primary-foreground">
+                  <p className="text-lg font-bold text-foreground dark:text-primary-foreground">
                     ${product.price.toLocaleString()}
                   </p>
                 </CardContent>
