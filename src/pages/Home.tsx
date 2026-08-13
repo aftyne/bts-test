@@ -37,7 +37,6 @@ export default function ProductList() {
   const { data: categories, isLoading: isLoadingCategories } = useQuery({
     queryKey: ["categories"],
     queryFn: fetchCategories,
-    staleTime: 1000 * 60 * 10,
   })
 
   const { data, isLoading, isError, error } = useQuery({

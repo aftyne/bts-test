@@ -37,7 +37,7 @@ export function CreateProductDialog() {
   const { data: categories, isLoading: isLoadingCategories } = useQuery({
     queryKey: ["categories"],
     queryFn: fetchCategories,
-    staleTime: 1000 * 60 * 2,
+    staleTime: 1000 * 60,
   })
 
   const mutation = useMutation({
